@@ -5,7 +5,7 @@ import java.io.InputStreamReader;
 import java.util.ArrayList;
 
 /**
- * Class Binary search tree
+ * Class to test methods of the Binary search tree
  */
 
 public class BST {
@@ -22,7 +22,10 @@ public class BST {
         methods_ByRating();
 
     }
-
+    
+    /*
+    * Method that stores rating information from file read line by line
+    */
     private static void fillRatings(ArrayList<String[ ]> list){
         String[] lineArray;
         for(int i=0; i<list.size() - 1; i++){
@@ -34,6 +37,10 @@ public class BST {
             }catch(NumberFormatException e){}     
         }
     }
+    
+    /*
+    * Method that tests add, contains (search), remove, toString, getRightSubtree, size methods of BST 
+    */
     public static void methods_ByRating(){
 
         BinarySearchTree<Float> ratingTree = new BinarySearchTree<>();
@@ -43,7 +50,6 @@ public class BST {
         System.out.println("-------------------------------------------------");
         // for (int num : score) 
         //     ratingTree.add(num);
-        long start = System.nanoTime();
 
         int x = 0;
         while(x < score.size()){
@@ -99,11 +105,11 @@ public class BST {
         System.out.println("-------------------------------------------------");    
         System.out.println("Testing BST is done successfully.");
 
-        long end = System.nanoTime();
-        long diff = end - start;
-
     }
 
+    /*
+    * reading file named "Movies.txt"
+    */
     public static ArrayList<String[]> read_file(String file_name){
 
         ArrayList<String[ ] > list = new ArrayList<String[ ] >();
